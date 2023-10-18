@@ -2,8 +2,6 @@ module github.com/XrayR-project/XrayR
 
 go 1.21
 
-toolchain go1.21.1
-
 require (
 	dario.cat/mergo v1.0.0
 	github.com/bitly/go-simplejson v0.5.1
@@ -14,7 +12,6 @@ require (
 	github.com/fsnotify/fsnotify v1.6.0
 	github.com/go-acme/lego/v4 v4.14.2
 	github.com/go-resty/resty/v2 v2.10.0
-	github.com/gogf/gf/v2 v2.5.4
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/r3labs/diff/v2 v2.15.1
 	github.com/redis/go-redis/v9 v9.2.1
@@ -84,6 +81,7 @@ require (
 	github.com/dimchansky/utfbom v1.1.1 // indirect
 	github.com/dnsimple/dnsimple-go v1.2.0 // indirect
 	github.com/exoscale/egoscale v0.100.1 // indirect
+	github.com/fatih/color v1.15.0 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/francoispqt/gojay v1.2.13 // indirect
 	github.com/gaukas/godicttls v0.0.4 // indirect
@@ -205,8 +203,6 @@ require (
 	github.com/yandex-cloud/go-sdk v0.0.0-20220805164847-cf028e604997 // indirect
 	github.com/yusufpapurcu/wmi v1.2.3 // indirect
 	go.opencensus.io v0.24.0 // indirect
-	go.opentelemetry.io/otel v1.14.0 // indirect
-	go.opentelemetry.io/otel/trace v1.14.0 // indirect
 	go.uber.org/atomic v1.11.0 // indirect
 	go.uber.org/multierr v1.9.0 // indirect
 	go.uber.org/ratelimit v0.2.0 // indirect
