@@ -114,7 +114,7 @@ func (c *APIClient) GetNodeInfo() (*api.NodeInfo, error) {
 		c.eTags["node"] = res.Header().Get("Etag")
 	}
 	var nodeInfoResponse NodeInfoResponse
-	json.Unmarshal(res.Body(), &nodeInfoResponse)
+	err = json.Unmarshal(res.Body(), &nodeInfoResponse)
 	nodeInfo, err := c.ParseAirGoNodeInfo(&nodeInfoResponse)
 	if err != nil {
 		return nil, fmt.Errorf("parse node info failed: %s, \nError: %v", res.String(), err)
@@ -187,8 +187,8 @@ func (c *APIClient) ParseAirGoNodeInfo(n *NodeInfoResponse) (*api.NodeInfo, erro
 	var h = make(map[string]any)
 	var header json.RawMessage
 
-	if n.NodeSpeedlimit > 0 {
-		speedLimit = uint64((n.NodeSpeedlimit * 1000000) / 8)
+	if n.NodeSpeedLimit > 0 {
+		speedLimit = uint64((n.NodeSpeedLimit * 1000000) / 8)
 	} else {
 		speedLimit = uint64((c.SpeedLimit * 1000000) / 8)
 	}
@@ -209,7 +209,7 @@ func (c *APIClient) ParseAirGoNodeInfo(n *NodeInfoResponse) (*api.NodeInfo, erro
 		}
 	}
 
-	switch n.NodeType {
+	switch n.Protocol {
 	case "vless", "Vless":
 		nodeInfo = api.NodeInfo{
 			EnableVless:       true,

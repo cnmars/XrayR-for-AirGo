@@ -6,9 +6,9 @@ import (
 
 type NodeInfoResponse struct {
 	ID             int64    `json:"id"`
-	NodeSpeedlimit int64    `json:"node_speedlimit"`
+	NodeSpeedLimit int64    `json:"node_speed_limit"`
 	TrafficRate    int64    `json:"traffic_rate"`
-	NodeType       string   `json:"node_type"`
+	Protocol       string   `json:"protocol"`
 	Remarks        string   `json:"remarks"`
 	Address        string   `json:"address"`
 	Port           int64    `json:"port"`
